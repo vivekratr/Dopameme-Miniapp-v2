@@ -28,7 +28,7 @@ const Main2 = () => {
       formData.append("prompt", context);
 
       const response = await axios.post(
-        "https://memish.onrender.com/uploadphoto",
+        "http://provider.ranchercompute.com:31132/uploadphoto",
         formData,
         {
           headers: {
