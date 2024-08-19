@@ -35,7 +35,7 @@ const Video_Meme_Input = () => {
       formData.append("prompt", context);
       if (activeButton == "prompt") {
         const response = await axios.post(
-          "https://memish.onrender.com/video",
+          "http://provider.ranchercompute.com:31132/video",
           formData,
           {
             headers: {
