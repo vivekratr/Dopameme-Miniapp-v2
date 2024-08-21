@@ -1,35 +1,3 @@
-# Dopameme
-
-Welcome to **Dopameme**, the ultimate platform for creating all kinds of memes! Whether you're looking to generate memes from photos, prompts, videos, or trending templates, Dopameme has got you covered. Dive into the world of humor and creativity with our intuitive meme-making tools.
-
-## Features
-
-### 1. Photo to Meme
-Turn any photo into a meme effortlessly!
-- **Upload or Click a Photo**: Users can either upload an existing image or click a new one.
-- **Add a Description (Optional)**: Provide a description for the image, and the model will create a meme based on it. If no description is provided, our intelligent model will analyze the image and generate a suitable meme caption automatically.
-
-### 2. Prompt to Image Meme
-Generate memes from simple text prompts!
-- **Anime Meme Generator**: Provide a text prompt, and our model will create an anime-style meme.
-- **Real Image Meme Generator**: Similarly, provide a text prompt to generate memes using real images.
-
-### 3. Prompt to Video Meme
-Create hilarious video memes with ease!
-- **Upload a Video**: Users can upload a video and provide a description of what's happening. The model will then generate the most suitable caption for the video.
-- **Generate from Prompt**: Provide a text prompt, and the platform will select a trending video template to create a meme.
-
-### 4. Prompt to Template Meme
-Let the trends guide your meme creation!
-- **Trending Template Selection**: Simply provide a text prompt, and Dopameme will pick the most trending photo template to craft your meme.
-
-## Arbitrum Sepolia Integration
-
-Dopameme is built on **Arbitrum Sepolia**, bringing decentralized features to the platform:
-
-- **Tipping System**: Users can tip other users for sharing and liking memes. This feature incentivizes creativity and engagement within the community.
-- **Dynamic Wallets**: Dopameme uses dynamic wallets to facilitate seamless transactions. Every user gets a wallet that can be used for tipping and receiving tips, all powered by Arbitrum Sepolia.
-
 ## Running the Frontend
 
 To get the frontend up and running, follow these steps:
@@ -66,6 +34,12 @@ Click the **"Connect"** button to connect your wallet to the platform.
 To interact with the platform, you'll need some Arbitrum Sepolia ETH. Obtain it from the following faucet:
 
 [Arbitrum Sepolia Faucet](https://arbitrum.faucet.dev/Sepolia)
+
+### Step 3: Add Environment variables:
+here is the sample keys:
+```VITE_NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID='' # Required - https://cloud.walletconnect.com/```
+```VITE_NEXT_PUBLIC_ENABLE_TESTNETS='true' # true or false```
+```VITE_NODE_ENV='development' # development or production```
 
 ### Step 3: Register
 Once your wallet is connected, you will be prompted to register. Follow the on-screen instructions to complete your registration.
@@ -208,6 +182,41 @@ sphnctl deployment get --lid [Lease ID]
 ```
 
 This will provide the URL, ports, and status of your deployment.
+
+
+
+# Dopameme
+
+Welcome to **Dopameme**, the ultimate platform for creating all kinds of memes! Whether you're looking to generate memes from photos, prompts, videos, or trending templates, Dopameme has got you covered. Dive into the world of humor and creativity with our intuitive meme-making tools.
+
+## Features
+
+### 1. Photo to Meme
+Turn any photo into a meme effortlessly!
+- **Upload or Click a Photo**: Users can either upload an existing image or click a new one.
+- **Add a Description (Optional)**: Provide a description for the image, and the model will create a meme based on it. If no description is provided, our intelligent model will analyze the image and generate a suitable meme caption automatically.
+
+### 2. Prompt to Image Meme
+Generate memes from simple text prompts!
+- **Anime Meme Generator**: Provide a text prompt, and our model will create an anime-style meme.
+- **Real Image Meme Generator**: Similarly, provide a text prompt to generate memes using real images.
+
+### 3. Prompt to Video Meme
+Create hilarious video memes with ease!
+- **Upload a Video**: Users can upload a video and provide a description of what's happening. The model will then generate the most suitable caption for the video.
+- **Generate from Prompt**: Provide a text prompt, and the platform will select a trending video template to create a meme.
+
+### 4. Prompt to Template Meme
+Let the trends guide your meme creation!
+- **Trending Template Selection**: Simply provide a text prompt, and Dopameme will pick the most trending photo template to craft your meme.
+
+## Arbitrum Sepolia Integration
+
+Dopameme is built on **Arbitrum Sepolia**, bringing decentralized features to the platform:
+
+- **Tipping System**: Users can tip other users for sharing and liking memes. This feature incentivizes creativity and engagement within the community.
+- **Dynamic Wallets**: Dopameme uses dynamic wallets to facilitate seamless transactions. Every user gets a wallet that can be used for tipping and receiving tips, all powered by Arbitrum Sepolia.
+
 
 ## Images
 
