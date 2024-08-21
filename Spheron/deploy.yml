@@ -1,0 +1,44 @@
+---
+version: "1.0"
+
+services:
+  web:
+    image: usename/project_title:latest
+    expose:
+      - port: 5000
+        as: 5000
+        to:
+          - global: true
+    env:
+      - TEST=test
+
+    command: ["python", "application.py"]
+
+profiles:
+  name: hello-world
+  duration: 200min
+  tier:
+    - community
+  compute:
+    web:
+      resources:
+        cpu:
+          units: 0.5
+        memory:
+          size: 1Gi
+        storage:
+          size: 1Gi
+  placement:
+    westcoast:
+      attributes:
+        region: us-west
+      pricing:
+        web:
+          denom: USDT
+          amount: 500000
+
+deployment:
+  web:
+    westcoast:
+      profile: web
+      count: 1
