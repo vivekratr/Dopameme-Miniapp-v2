@@ -3,7 +3,7 @@ version: "1.0"
 
 services:
   web:
-    image: usename/project_title:latest
+    image: shreyashsingh1/dopameme:latest
     expose:
       - port: 5000
         as: 5000
@@ -16,7 +16,7 @@ services:
 
 profiles:
   name: hello-world
-  duration: 200min
+  duration: 1440min
   tier:
     - community
   compute:
