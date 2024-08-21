@@ -30,6 +30,47 @@ Dopameme is built on **Arbitrum Sepolia**, bringing decentralized features to th
 - **Tipping System**: Users can tip other users for sharing and liking memes. This feature incentivizes creativity and engagement within the community.
 - **Dynamic Wallets**: Dopameme uses dynamic wallets to facilitate seamless transactions. Every user gets a wallet that can be used for tipping and receiving tips, all powered by Arbitrum Sepolia.
 
+## Running the Frontend
+
+To get the frontend up and running, follow these steps:
+
+### Step 1: Install Dependencies
+Run the following command to install all necessary dependencies:
+
+```bash
+npm install
+```
+or 
+```bash
+yarn
+```
+### Step 2: Start the Development Server
+Run the following command to start the development server:
+
+```bash
+npm run dev
+```
+
+```bash
+yarn dev
+```
+
+## Pre-Requisite
+
+Follow these steps to start using the product:
+
+### Step 1: Connect Your Wallet
+Click the **"Connect"** button to connect your wallet to the platform.
+
+### Step 2: Get Arbitrum Sepolia ETH
+To interact with the platform, you'll need some Arbitrum Sepolia ETH. Obtain it from the following faucet:
+
+[Arbitrum Sepolia Faucet](https://arbitrum.faucet.dev/Sepolia)
+
+### Step 3: Register
+Once your wallet is connected, you will be prompted to register. Follow the on-screen instructions to complete your registration.
+
+
 ## Getting Started
 
 1. **Sign Up/Log In**: Create an account or log in to start making memes.
