@@ -55,7 +55,7 @@ const Output = () => {
       console.log(context);
 
       const response = await axios.post(
-        "http://provider.ranchercompute.com:31132/uploadphoto",
+        "http://provider.ranchercompute.com:31057/uploadphoto",
         formData,
         {
           headers: {

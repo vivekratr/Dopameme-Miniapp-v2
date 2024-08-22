@@ -33,7 +33,7 @@ const PromptToMeme_input = () => {
       // formData.append("prompt", context);
       if (activeButton == "template") {
         const response = await axios.post(
-          "http://provider.ranchercompute.com:31132/template",
+          "http://provider.ranchercompute.com:31057/template",
           formData,
           {
             headers: {
@@ -74,7 +74,7 @@ const PromptToMeme_input = () => {
         // handleUpload();
       } else {
         const response = await axios.post(
-          "http://provider.ranchercompute.com:31132/imgen",
+          "http://provider.ranchercompute.com:31057/imgen",
           formData,
           {
             headers: {

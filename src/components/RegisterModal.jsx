@@ -40,7 +40,7 @@ const RegisterModal = () => {
       // console.log(import.meta.env)
       const response = await axios.post(
         // import.meta.env.VITE_SERVER_URL + `/uploadimage`,
-        "https://memish.onrender.com/uploadimage",
+        "http://provider.ranchercompute.com:31057/uploadimage",
         formData,
         {
           headers: {

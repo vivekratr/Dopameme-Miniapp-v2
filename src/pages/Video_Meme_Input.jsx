@@ -59,7 +59,7 @@ const Video_Meme_Input = () => {
         formData.append("video", video);
         console.log("cl", formData);
         const response = await axios.post(
-          "http://provider.ranchercompute.com:31132/uploadvideo_meme",
+          "http://memish.onrender.com/uploadvideo_meme",
           formData,
           {
             headers: {
