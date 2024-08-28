@@ -1,0 +1,13 @@
+flask
+google-generativeai
+flask-cors
+matplotlib
+gunicorn
+opencv-python
+imgurpython
+numpy
+publitio
+diffusers
+transformers
+accelerate
+peft

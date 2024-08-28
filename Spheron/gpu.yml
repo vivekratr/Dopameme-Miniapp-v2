@@ -1,9 +1,9 @@
 ---
 version: "1.0"
-
+ 
 services:
   web:
-    image: shreyashsingh1/dopameme:latest
+    image: shreyashsingh1/dopam:latest
     expose:
       - port: 5000
         as: 5000
@@ -13,10 +13,10 @@ services:
       - TEST=test
 
     command: ["python", "application.py"]
-
+  
 profiles:
   name: hello-world
-  duration: 1440min
+  duration: 640min
   tier:
     - community
   compute:
@@ -25,20 +25,28 @@ profiles:
         cpu:
           units: 0.5
         memory:
-          size: 1Gi
+          size: 16Gi
         storage:
-          size: 1Gi
+          size: 16Gi
+
+        gpu:
+          units: 1
+          attributes:
+            vendor:
+              nvidia:
+                - model: t1000
   placement:
     westcoast:
       attributes:
-        region: us-west
+        region: us-central
       pricing:
         web:
           denom: USDT
           amount: 500000
-
+ 
 deployment:
   web:
     westcoast:
       profile: web
       count: 1
+      
