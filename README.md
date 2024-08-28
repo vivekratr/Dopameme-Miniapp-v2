@@ -104,78 +104,97 @@ Once your wallet is connected, you will be prompted to register. Follow the on-s
 
 ## Deployment on Spheron (For Flask Application - Python)
 
-### Step 1: Install Spheron Protocol sphnctl CLI (Linux, MacOS)
+### Step 1: Install Spheron Protocol `sphnctl` CLI (Linux, MacOS)
 
-To install Spheron Protocol CLI using a script, make sure you have `curl` installed on your system. Check with:
+To install the Spheron Protocol CLI using a script, ensure you have `curl` installed on your system. You can check if `curl` is installed by running:
 
 ```bash
 curl --version
 ```
 
-To install the Spheron Protocol CLI on your system, run this command and enter the password when prompted:
+If `curl` is installed, proceed with installing the Spheron Protocol CLI:
 
 ```bash
-curl -sL1 https://sphnctl.sh | bash
+curl -sL https://sphnctl.sh | bash
 ```
 
-Verify the installation by checking the Spheron version:
+After installation, verify that the CLI is installed correctly by checking the version:
 
 ```bash
 sphnctl -h
 ```
 
-### Step 2: Create a New Wallet Using the CLI
+### Step 2: Build and Push Docker Image
 
-To create a new wallet, configure the name of your key:
+Before deploying your Flask application, you need to build and push your Docker image to a container registry.
+
+1. **Build the Docker Image**:  
+   Navigate to your project directory and run:
+
+   ```bash
+   docker build -t <your-dockerhub-username>/<your-image-name>:latest .
+   ```
+
+   Replace `<your-dockerhub-username>` and `<your-image-name>` with your Docker Hub username and the desired image name.
+
+2. **Push the Docker Image**:  
+   After building the image, push it to Docker Hub or your preferred container registry:
+
+   ```bash
+   docker push <your-dockerhub-username>/<your-image-name>:latest
+   ```
+
+### Step 3: Create a New Wallet Using the CLI
+
+To create a new wallet for Spheron, use the CLI:
 
 ```bash
-sphnctl wallet create --name [wallet name]
+sphnctl wallet create --name [wallet-name]
 ```
 
-Save the mnemonic phrase and key secret securely.
+Replace `[wallet-name]` with your desired wallet name. Make sure to securely save the mnemonic phrase and key secret provided.
 
-### Step 3: Get Some Test Tokens from the Faucet
+### Step 4: Get Test Tokens from the Faucet
 
-Visit the [Spheron Faucet](https://faucet.spheron.network/) to obtain test tokens. After receiving the tokens, check your wallet balance:
+Visit the [Spheron Faucet](https://faucet.spheron.network/) to obtain test tokens for deployment. After receiving the tokens, you can check your wallet balance with:
 
 ```bash
 sphnctl wallet balance --token USDT
 ```
 
-### Step 4: Get Some Arbitrum Sepolia ETH
+### Step 5: Get Arbitrum Sepolia ETH
 
-Use any of the following faucets to obtain test ETH tokens for the Arbitrum Sepolia chain:
+To deploy your application on the Arbitrum Sepolia chain, you'll need test ETH tokens. Use any of these faucets:
 
 - [QuickNode Faucet](https://faucet.quicknode.com/arbitrum/sepolia)
 - [Alchemy Faucet](https://www.alchemy.com/faucets/arbitrum-sepolia)
 - [Chainlink Faucet](https://faucets.chain.link/arbitrum-sepolia)
 - [LearnWeb3 Faucet](https://learnweb3.io/faucets/arbitrum_sepolia/)
 
-### Step 5: Deposit Tokens to Your Escrow Balance
+### Step 6: Deposit Tokens to Your Escrow Balance
 
-Deposit USDT or any other token to the escrow wallet:
+Deposit USDT or another token to your escrow wallet for deployment:
 
 ```bash
 sphnctl payment deposit --amount 10000000 --token USDT
 ```
 
-Ensure you have an unlocked balance:
+Ensure your balance is unlocked and sufficient:
 
 ```bash
 sphnctl wallet balance --token USDT
 ```
 
-### Step 6: Deploy the Flask Application
+### Step 7: Deploy the Flask Application
 
-Create an ICL configuration file (e.g., `cpu.yml`):
+Create an ICL configuration file (e.g., `gpu.yml`) for your deployment:
 
 ```yaml
----
 version: "1.0"
- 
+
 services:
   web:
-    image: shreyashsingh1/dopam:latest
+    image: <your-dockerhub-username>/<your-image-name>:latest
     expose:
       - port: 5000
         as: 5000
@@ -183,9 +202,8 @@ services:
           - global: true
     env:
       - TEST=test
-
     command: ["python", "application.py"]
-  
+
 profiles:
   name: hello-world
   duration: 640min
@@ -200,7 +218,6 @@ profiles:
           size: 16Gi
         storage:
           size: 16Gi
-
         gpu:
           units: 1
           attributes:
@@ -215,32 +232,35 @@ profiles:
         web:
           denom: USDT
           amount: 500000
- 
+
 deployment:
   web:
     westcoast:
       profile: web
       count: 1
-      
 ```
 
-Deploy the configuration on Spheron Protocol:
+Make sure to replace `<your-dockerhub-username>/<your-image-name>` with your actual Docker Hub username and image name.
+
+Deploy the configuration file on Spheron:
 
 ```bash
 sphnctl deployment create gpu.yml
 ```
 
-### Step 7: Access Your Deployment
+### Step 8: Access Your Deployment
 
-To access your deployment details:
+To get details about your deployment, including the URL, ports, and status, run:
 
 ```bash
 sphnctl deployment get --lid [Lease ID]
 ```
 
-This will provide the URL, ports, and status of your deployment.
+Replace `[Lease ID]` with your actual lease ID obtained after deployment.
 
+### Conclusion
 
+Following these steps will help you successfully deploy your Flask application on Spheron using Python. Be sure to keep your wallet keys secure and monitor your deployment for any issues.
 
 
 
