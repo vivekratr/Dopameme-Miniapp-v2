@@ -227,7 +227,7 @@ deployment:
 Deploy the configuration on Spheron Protocol:
 
 ```bash
-sphnctl deployment create cpu.yml
+sphnctl deployment create gpu.yml
 ```
 
 ### Step 7: Access Your Deployment
