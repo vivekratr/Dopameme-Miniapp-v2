@@ -1,5 +1,3 @@
-Here's a refined guide for deploying a Flask application on Spheron using Python, with added steps for building and pushing your Docker image.
-
 ## Deployment on Spheron (For Flask Application - Python)
 
 ### Step 1: Install Spheron Protocol `sphnctl` CLI (Linux, MacOS)
@@ -85,7 +83,7 @@ sphnctl wallet balance --token USDT
 
 ### Step 7: Deploy the Flask Application
 
-Create an ICL configuration file (e.g., `cpu.yml`) for your deployment:
+Create an ICL configuration file (e.g., `gpu.yml`) for your deployment:
 
 ```yaml
 version: "1.0"
@@ -143,7 +141,7 @@ Make sure to replace `<your-dockerhub-username>/<your-image-name>` with your act
 Deploy the configuration file on Spheron:
 
 ```bash
-sphnctl deployment create cpu.yml
+sphnctl deployment create gpu.yml
 ```
 
 ### Step 8: Access Your Deployment
