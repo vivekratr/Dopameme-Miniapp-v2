@@ -1,3 +1,52 @@
+# Dopameme
+
+Welcome to **Dopameme**, the ultimate platform for creating all kinds of memes! Whether you're looking to generate memes from photos, prompts, videos, or trending templates, Dopameme has got you covered. Dive into the world of humor and creativity with our intuitive meme-making tools.
+
+## Features
+
+### 1. Photo to Meme
+Turn any photo into a meme effortlessly!
+- **Upload or Click a Photo**: Users can either upload an existing image or click a new one.
+- **Add a Description (Optional)**: Provide a description for the image, and the model will create a meme based on it. If no description is provided, our intelligent model will analyze the image and generate a suitable meme caption automatically.
+
+### 2. Prompt to Image Meme
+Generate memes from simple text prompts!
+- **Anime Meme Generator**: Provide a text prompt, and our model will create an anime-style meme.
+- **Real Image Meme Generator**: Similarly, provide a text prompt to generate memes using real images.
+
+### 3. Prompt to Video Meme
+Create hilarious video memes with ease!
+- **Upload a Video**: Users can upload a video and provide a description of what's happening. The model will then generate the most suitable caption for the video.
+- **Generate from Prompt**: Provide a text prompt, and the platform will select a trending video template to create a meme.
+
+### 4. Prompt to Template Meme
+Let the trends guide your meme creation!
+- **Trending Template Selection**: Simply provide a text prompt, and Dopameme will pick the most trending photo template to craft your meme.
+
+## Arbitrum Sepolia Integration
+
+Dopameme is built on **Arbitrum Sepolia**, bringing decentralized features to the platform:
+
+- **Tipping System**: Users can tip other users for sharing and liking memes. This feature incentivizes creativity and engagement within the community.
+- **Dynamic Wallets**: Dopameme uses dynamic wallets to facilitate seamless transactions. Every user gets a wallet that can be used for tipping and receiving tips, all powered by Arbitrum Sepolia.
+
+
+## Images
+
+Here are some screenshots of Dopameme in action:
+
+![Photo to Meme](https://i.imgur.com/sRW5hpm.jpeg)
+*The Photo to Meme feature in action.*
+
+![Prompt to Image Meme](https://shreyashsingh.publit.io/file/output-0M.jpg)
+*Generating an image meme from a prompt.*
+
+![Prompt to Video Meme](https://i.imgur.com/7jOTSED.gif)
+*Creating a video meme with a given prompt.*
+
+![Prompt to Template Meme](https://shreyashsingh.publit.io/file/output-3c.jpg)
+*Using a trending template to generate a meme.*
+
 ## Running the Frontend
 
 To get the frontend up and running, follow these steps:
@@ -123,10 +172,10 @@ Create an ICL configuration file (e.g., `cpu.yml`):
 ```yaml
 ---
 version: "1.0"
-
+ 
 services:
   web:
-    image: usename/project_title:latest
+    image: shreyashsingh1/dopam:latest
     expose:
       - port: 5000
         as: 5000
@@ -136,10 +185,10 @@ services:
       - TEST=test
 
     command: ["python", "application.py"]
-
+  
 profiles:
   name: hello-world
-  duration: 200min
+  duration: 640min
   tier:
     - community
   compute:
@@ -148,23 +197,31 @@ profiles:
         cpu:
           units: 0.5
         memory:
-          size: 1Gi
+          size: 16Gi
         storage:
-          size: 1Gi
+          size: 16Gi
+
+        gpu:
+          units: 1
+          attributes:
+            vendor:
+              nvidia:
+                - model: t1000
   placement:
     westcoast:
       attributes:
-        region: us-west
+        region: us-central
       pricing:
         web:
           denom: USDT
           amount: 500000
-
+ 
 deployment:
   web:
     westcoast:
       profile: web
       count: 1
+      
 ```
 
 Deploy the configuration on Spheron Protocol:
@@ -185,54 +242,7 @@ This will provide the URL, ports, and status of your deployment.
 
 
 
-# Dopameme
 
-Welcome to **Dopameme**, the ultimate platform for creating all kinds of memes! Whether you're looking to generate memes from photos, prompts, videos, or trending templates, Dopameme has got you covered. Dive into the world of humor and creativity with our intuitive meme-making tools.
-
-## Features
-
-### 1. Photo to Meme
-Turn any photo into a meme effortlessly!
-- **Upload or Click a Photo**: Users can either upload an existing image or click a new one.
-- **Add a Description (Optional)**: Provide a description for the image, and the model will create a meme based on it. If no description is provided, our intelligent model will analyze the image and generate a suitable meme caption automatically.
-
-### 2. Prompt to Image Meme
-Generate memes from simple text prompts!
-- **Anime Meme Generator**: Provide a text prompt, and our model will create an anime-style meme.
-- **Real Image Meme Generator**: Similarly, provide a text prompt to generate memes using real images.
-
-### 3. Prompt to Video Meme
-Create hilarious video memes with ease!
-- **Upload a Video**: Users can upload a video and provide a description of what's happening. The model will then generate the most suitable caption for the video.
-- **Generate from Prompt**: Provide a text prompt, and the platform will select a trending video template to create a meme.
-
-### 4. Prompt to Template Meme
-Let the trends guide your meme creation!
-- **Trending Template Selection**: Simply provide a text prompt, and Dopameme will pick the most trending photo template to craft your meme.
-
-## Arbitrum Sepolia Integration
-
-Dopameme is built on **Arbitrum Sepolia**, bringing decentralized features to the platform:
-
-- **Tipping System**: Users can tip other users for sharing and liking memes. This feature incentivizes creativity and engagement within the community.
-- **Dynamic Wallets**: Dopameme uses dynamic wallets to facilitate seamless transactions. Every user gets a wallet that can be used for tipping and receiving tips, all powered by Arbitrum Sepolia.
-
-
-## Images
-
-Here are some screenshots of Dopameme in action:
-
-![Photo to Meme](https://i.imgur.com/sRW5hpm.jpeg)
-*The Photo to Meme feature in action.*
-
-![Prompt to Image Meme](https://shreyashsingh.publit.io/file/output-0M.jpg)
-*Generating an image meme from a prompt.*
-
-![Prompt to Video Meme](https://i.imgur.com/7jOTSED.gif)
-*Creating a video meme with a given prompt.*
-
-![Prompt to Template Meme](https://shreyashsingh.publit.io/file/output-3c.jpg)
-*Using a trending template to generate a meme.*
 
 ## License
 Dopameme is licensed under the MIT License. See `LICENSE` for more information.
