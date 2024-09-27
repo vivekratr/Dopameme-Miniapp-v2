@@ -35,14 +35,8 @@ Dopameme is built on **Arbitrum Sepolia**, bringing decentralized features to th
 
 Here are some screenshots of Dopameme in action:
 
-![Photo to Meme](https://i.imgur.com/sRW5hpm.jpeg)
-*The Photo to Meme feature in action.*
-
 ![Prompt to Image Meme](https://shreyashsingh.publit.io/file/output-0M.jpg)
 *Generating an image meme from a prompt.*
-
-![Prompt to Video Meme](https://i.imgur.com/7jOTSED.gif)
-*Creating a video meme with a given prompt.*
 
 ![Prompt to Template Meme](https://shreyashsingh.publit.io/file/output-3c.jpg)
 *Using a trending template to generate a meme.*
